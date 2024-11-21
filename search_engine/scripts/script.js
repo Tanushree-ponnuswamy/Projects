@@ -1,3 +1,6 @@
+const { JSDOM }=require ('jsdom');
+const dom = new JSDOM ('<!DOCTYPE html><html><body></body></html>');
+const document=dom.window.document;
 const imagedata=[{url:'public\panther (2).jpeg', name:'panther'},{url:'public\lion.jpeg', name:'lion'}];
 const searchbar=document.getElementById('site-search');
 const searchbutton=document.getElementById('search-button')

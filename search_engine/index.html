@@ -1,40 +1,119 @@
 <!DOCTYPE html>
 <html>
-<body style="background-color:rgb(16, 17, 18);">
+    <head>
+        <style>
+            body{
+                background-image: url(public/bg3.jpg);
+            }
+           h1 {
+            color:rgb(218, 246, 6);
+              font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;  
+            }
+            #site-search{
+                padding: 10px;
+                border-radius:120px;
+                opacity: 0.6;
+                margin: 20px;
+                align-items: center;
+            }
+            #search-button{
+                background-color: rgb(201, 239, 7);
+                border: none;
+                border-radius: 40%;
+                
+                
+            }
+            .animal{
+                border-radius: 20px;
+            }
+    </style>
+    </head>
+
+<body style="background-color:rgb(1, 0, 0);">
     <center>
-    <h1 style="font-family:verdana;color:rgb(244, 242, 242);font-size: 25px;" align="center">Image Engine</h1>
+    <h1>Image Engine</h1>
     
-    <input type="search" id="site-search" name="q"  />
-    <button>Search</button>
+    <input type="search" id="site-search"  placeholder="search here" />
+    <button id="search-button">O</button>
 
-    <hr>
-
+   <div id="results">
+   </div>
+    <br>
+    
+<br>
 
 <table>
     <tr>
-        <td><img src="panther (2).jpeg" width="200" height="200"></td>
-        <td><img src="lion.jpeg" width="200" height="200"></td>
-        <td><img src="dog.jpeg" width="200" height="200"></td>
+        <td><img id="img1" class="animal" src="public\panther (2).jpeg" width="200" height="200"></td>
+        <td><img id="img2" class="animal" src="public\lion.jpeg" width="200" height="200"></td>
+        <td><img id="img3" class="animal" src="public\dog (2).jpeg" width="200" height="200"></td>
     </tr>
 
     <tr>
-        <td><img src="cat (2).jpg" width="200" height="200"></td>
-        <td><img src="fox.jpg" width="200" height="200"></td>
-        <td><img src="wolf.jpg" width="200" height="200"></td>
+        <td><img id="img4" class="animal" src="public\cat (2).jpg" width="200" height="200"></td>
+        <td><img id="img5" class="animal" src="public\fox.jpg" width="200" height="200"></td>
+        <td><img id="img6" class="animal" src="public\wolf.jpg" width="200" height="200"></td>
     </tr>
 
     <tr>
-        <td><img src="giraffe.webp" width="200" height="200"></td>
-        <td><img src="dog.webp" width="200" height="200"></td>
-        <td><img src="dog (2).webp" width="200" height="200"></td>
+        <td><img id="img7" class="animal" src="public\giraffe.webp" width="200" height="200"></td>
+        <td><img id="img8" class="animal" src="public\dog.webp" width="200" height="200"></td>
+        <td><img id="img9" class="animal" src="public\dog (2).webp" width="200" height="200"></td>
     </tr>
 
     <tr>
-        <td><img src="wolf.jpeg" width="200" height="200"></td>
-        <td><img src="giraffe (2).webp" width="200" height="200"></td>
-        <td><img src="fox.jpeg" width="200" height="200"></td>
+        <td><img id="img10" class="animal" src="public\wolf.jpeg" width="200" height="200"></td>
+        <td><img id="img11" class="animal" src="public\giraffe (2).webp" width="200" height="200"></td>
+        <td><img id="img12" class="animal" src="public\fox.jpeg" width="200" height="200"></td>
     </tr>
+
 </table>
 </center>
+<script>
+    
+const imagedata=[
+{ url: "public/panther (2).jpeg", name: "panther" },
+{ url: "public/lion.jpeg", name: "lion" },
+{ url: "public/dog (2).jpeg", name: "dog" }, 
+{ url: "public/cat (2).jpg", name: "cat" },
+{ url: "public/fox.jpg", name: "fox" },
+{ url: "public/wolf.jpg", name: "wolf" }, 
+{ url: "public/giraffe.webp", name: "giraffe" }, 
+{ url: "public/dog.webp", name: "dog" },
+{ url: "public/dog (2).webp", name: "dog" },
+{ url: "public/wolf.jpeg", name: "wolf" },
+{ url: "public/giraffe (2).webp", name: "giraffe" },
+{ url: "public/fox.jpeg", name: "fox" }
+];
+const searchbar=document.getElementById("site-search");
+const searchbutton=document.getElementById("search-button")
+const resultsContainer=document.getElementById("results");
+
+searchbutton.addEventListener("click",()=>{
+    const searchTerm=searchbar.value.toLowerCase();
+    const filterimages=imagedata.filter(image=>{-8  
+        return image.name.toLowerCase().includes(searchTerm);
+    });
+
+    resultsContainer.innerHTML='';
+    if(filterimages.length===0){
+        resultsContainer.innerHTML="<p>No results found.</p>";
+        return;
+    }
+
+    filterimages.forEach(image=> {
+        const imgElement=document.createElement("img");
+        imgElement.src=image.url;
+        imgElement.alt=image.name;
+        imgElement.width=200;
+        imgElement.height=200;
+        resultsContainer.appendChild(imgElement);
+    });
+    
+
+    
+
+});
+</script>
 </body>
 </html>

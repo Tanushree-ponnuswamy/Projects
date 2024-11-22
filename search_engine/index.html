@@ -42,7 +42,20 @@
 </center>
 <script>
     
-const imagedata=[{url:"public\panther (2).jpeg", name:"panther"},{url:"public\lion.jpeg", name:"lion"}];
+const imagedata=[
+{ url: "public/panther (2).jpeg", name: "panther" },
+{ url: "public/lion.jpeg", name: "lion" },
+{ url: "public/dog (2).jpeg", name: "dog" }, 
+{ url: "public/cat (2).jpg", name: "cat" },
+{ url: "public/fox.jpg", name: "fox" },
+{ url: "public/wolf.jpg", name: "wolf" }, 
+{ url: "public/giraffe.webp", name: "giraffe" }, 
+{ url: "public/dog.webp", name: "dog" },
+{ url: "public/dog (2).webp", name: "dog" },
+{ url: "public/wolf.jpeg", name: "wolf" },
+{ url: "public/giraffe (2).webp", name: "giraffe" },
+{ url: "public/fox.jpeg", name: "fox" }
+];
 const searchbar=document.getElementById("site-search");
 const searchbutton=document.getElementById("search-button")
 const resultsContainer=document.getElementById("results");
@@ -54,7 +67,6 @@ searchbutton.addEventListener("click",()=>{
     });
 
     resultsContainer.innerHTML='';
-
     if(filterimages.length===0){
         resultsContainer.innerHTML="<p>No results found.</p>";
         return;
@@ -66,11 +78,9 @@ searchbutton.addEventListener("click",()=>{
         imgElement.alt=image.name;
         resultsContainer.appendChild(imgElement);
     });
-    function show()
-    {
-        const display=document.getElementById('img1').style.display;
-        const search=document.getElementById('search-button').style.display;
-    }
+    
+
+    
 
 });
 </script>

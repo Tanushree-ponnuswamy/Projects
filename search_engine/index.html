@@ -28,14 +28,14 @@
 
     <tr>
         <td><img id="img7" src="public\giraffe.webp" width="200" height="200"></td>
-        <td><img id="img3" src="public\dog.webp" width="200" height="200"></td>
-        <td><img id="img3" src="public\dog (2).webp" width="200" height="200"></td>
+        <td><img id="img8" src="public\dog.webp" width="200" height="200"></td>
+        <td><img id="img9" src="public\dog (2).webp" width="200" height="200"></td>
     </tr>
 
     <tr>
-        <td><img id="img6" src="public\wolf.jpeg" width="200" height="200"></td>
-        <td><img id="img7" src="public\giraffe (2).webp" width="200" height="200"></td>
-        <td><img id="img5" src="public\fox.jpeg" width="200" height="200"></td>
+        <td><img id="img10" src="public\wolf.jpeg" width="200" height="200"></td>
+        <td><img id="img11" src="public\giraffe (2).webp" width="200" height="200"></td>
+        <td><img id="img12" src="public\fox.jpeg" width="200" height="200"></td>
     </tr>
 
 </table>
@@ -62,14 +62,14 @@ searchbutton.addEventListener("click",()=>{
 
     filterimages.forEach(image=> {
         const imgElement=document.createElement("img");
-        imgElement.scr=image.url;
+        imgElement.src=image.url;
         imgElement.alt=image.name;
         resultsContainer.appendChild(imgElement);
     });
     function show()
     {
-        document.getElementById('img1').style.display="block";
-        document.getElementById('search-button').style.display="none"
+        const display=document.getElementById('img1').style.display;
+        const search=document.getElementById('search-button').style.display;
     }
 
 });

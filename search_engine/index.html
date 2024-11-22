@@ -5,7 +5,7 @@
     <h1 style="font-family:verdana;color:rgb(244, 242, 242);font-size: 25px;" align="center">Image Engine</h1>
     
     <input type="search" id="site-search" placeholder="search for animal images"  />
-    <button id="search-button" onclick="show()">Search</button>
+    <button id="search-button" >Search</button>
 
    <div id="results">
    </div>
@@ -76,6 +76,8 @@ searchbutton.addEventListener("click",()=>{
         const imgElement=document.createElement("img");
         imgElement.src=image.url;
         imgElement.alt=image.name;
+        imgElement.width=200;
+        imgElement.height=200;
         resultsContainer.appendChild(imgElement);
     });
     

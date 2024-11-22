@@ -5,7 +5,8 @@
     <h1 style="font-family:verdana;color:rgb(244, 242, 242);font-size: 25px;" align="center">Image Engine</h1>
     
     <input type="search" id="site-search" placeholder="search for animal images"  />
-    <button id="search-button">Search</button>
+    <button id="search-button" onclick="show()">Search</button>
+
    <div id="results">
    </div>
     
@@ -14,27 +15,27 @@
 
 <table>
     <tr>
-        <td><img src="public\panther (2).jpeg" width="200" height="200"></td>
-        <td><img src="public\lion.jpeg" width="200" height="200"></td>
-        <td><img src="public\dog (2).jpeg" width="200" height="200"></td>
+        <td><img id="img1" src="public\panther (2).jpeg" width="200" height="200"></td>
+        <td><img id="img2" src="public\lion.jpeg" width="200" height="200"></td>
+        <td><img id="img3" src="public\dog (2).jpeg" width="200" height="200"></td>
     </tr>
 
     <tr>
-        <td><img src="public\cat (2).jpg" width="200" height="200"></td>
-        <td><img src="public\fox.jpg" width="200" height="200"></td>
-        <td><img src="public\wolf.jpg" width="200" height="200"></td>
+        <td><img id="img4" src="public\cat (2).jpg" width="200" height="200"></td>
+        <td><img id="img5" src="public\fox.jpg" width="200" height="200"></td>
+        <td><img id="img6" src="public\wolf.jpg" width="200" height="200"></td>
     </tr>
 
     <tr>
-        <td><img src="public\giraffe.webp" width="200" height="200"></td>
-        <td><img src="public\dog.webp" width="200" height="200"></td>
-        <td><img src="public\dog (2).webp" width="200" height="200"></td>
+        <td><img id="img7" src="public\giraffe.webp" width="200" height="200"></td>
+        <td><img id="img3" src="public\dog.webp" width="200" height="200"></td>
+        <td><img id="img3" src="public\dog (2).webp" width="200" height="200"></td>
     </tr>
 
     <tr>
-        <td><img src="public\wolf.jpeg" width="200" height="200"></td>
-        <td><img src="public\giraffe (2).webp" width="200" height="200"></td>
-        <td><img src="public\fox.jpeg" width="200" height="200"></td>
+        <td><img id="img6" src="public\wolf.jpeg" width="200" height="200"></td>
+        <td><img id="img7" src="public\giraffe (2).webp" width="200" height="200"></td>
+        <td><img id="img5" src="public\fox.jpeg" width="200" height="200"></td>
     </tr>
 
 </table>
@@ -48,7 +49,7 @@ const resultsContainer=document.getElementById("results");
 
 searchbutton.addEventListener("click",()=>{
     const searchTerm=searchbar.value.toLowerCase();
-    const filterimages=imagedata.filter(image=>{
+    const filterimages=imagedata.filter(image=>{-8  
         return image.name.toLowerCase().includes(searchTerm);
     });
 
@@ -65,6 +66,11 @@ searchbutton.addEventListener("click",()=>{
         imgElement.alt=image.name;
         resultsContainer.appendChild(imgElement);
     });
+    function show()
+    {
+        document.getElementById('img1').style.display="block";
+        document.getElementById('search-button').style.display="none"
+    }
 
 });
 </script>
